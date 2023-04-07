@@ -11,6 +11,7 @@ router.post('/add', bookCtrl.addBook );
 router.get('/edit/:id', bookCtrl.editBook );
 router.post('/edit/:id', bookCtrl.editBook );
 
-router.get('/delete', bookCtrl.deleteBook );
+router.get('/delete/:id', bookCtrl.deleteBook );
+router.post('/delete/:id', bookCtrl.deleteBook );
 
 module.exports = router;

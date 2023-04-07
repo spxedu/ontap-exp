@@ -70,7 +70,27 @@ exports.editBook = async (req, res, next )=>{
     res.render('book/edit-book', { msg: msg, objBook: objBook })
 }
 
-exports.deleteBook = (req, res, next )=>{
+exports.deleteBook = async (req, res, next )=>{
+    let msg = '';
+    let id = req.params.id; 
+    // lấy sp cần sửa
+    let objBook = await md.bookModel.findById( id);
+    if(objBook == null)
+        {
+            msg = "không tồn tại sách ";
+            res.render('book/delete', { msg: msg })
+        }
 
-    
+        if(req.method =='POST'){
+            try {
+                await md.bookModel.findByIdAndDelete(id);
+                // chuyển trang
+                res.redirect('/books');
+            } catch (error) {
+                msg = error.message;
+            }
+        }
+
+
+    res.render('book/delete', { msg: msg, objBook: objBook })
 }
