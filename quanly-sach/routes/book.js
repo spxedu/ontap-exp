@@ -6,8 +6,10 @@ var bookCtrl = require('../controllers/book.controller')
 router.get('/', bookCtrl.listBook );
 
 router.get('/add', bookCtrl.addBook );
+router.post('/add', bookCtrl.addBook );
 
-router.get('/edit', bookCtrl.editBook );
+router.get('/edit/:id', bookCtrl.editBook );
+router.post('/edit/:id', bookCtrl.editBook );
 
 router.get('/delete', bookCtrl.deleteBook );
 

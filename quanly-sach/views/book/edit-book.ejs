@@ -1,1 +1,14 @@
 <h1>Sửa</h1>
+
+<p>
+    <%= msg %>
+</p>
+<form action="" method="post">
+    <input type="text" name="ten_sach" placeholder="Tên sách"
+    value="<%= objBook.ten_sach  %>"
+    > <br>
+    <input type="number" name="nam_xb" placeholder="Năm xuất bản"
+    value="<%= objBook.nam_xb  %>"
+    > <br>
+    <button type="submit">Thêm</button>
+</form>
