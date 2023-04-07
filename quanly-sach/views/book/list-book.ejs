@@ -1,1 +1,15 @@
 <h1>Danh sách</h1>
+
+<%= msg %>
+
+<ul>
+<% listBook.forEach(row => { %>
+    <li>
+        tên sách:  <%= row.ten_sach  %>     - năm xb: <%= row.nam_xb %>
+    </li>
+
+<% });  %>
+
+
+    
+</ul>
